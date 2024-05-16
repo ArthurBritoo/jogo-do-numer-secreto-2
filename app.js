@@ -6,7 +6,7 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1});
 }
 function exibirMensagemIncial(){
     exibirTextoNaTela('h1', 'Jogo do Numero Secreto por Brito')
@@ -19,7 +19,7 @@ function verificarChute() {
     if(chute == numerSecreto) {
         exibirTextoNaTela('h1', 'Acertou!' );
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-        let mensagemTentativas = `Parabens, voce acertou o Numero Secreto ${numeroLimite} com ${tentativas} ${palavraTentativa}`;
+        let mensagemTentativas = `Parabens, voce acertou o Numero Secreto ${numerSecreto} com ${tentativas} ${palavraTentativa}`;
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute ('disabled');
     } else {
